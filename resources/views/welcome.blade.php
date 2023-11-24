@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     <!-- For small screen -->
-                    <div id="mobile-menu" class="hidden absolute dark:bg-gray-500 z-10 inset-0 md:hidden bg-white flex flex-col h-screen w-full">
+                    <div id="mobile-menu" class=" absolute dark:bg-gray-500 z-10 inset-0 md:hidden bg-white flex flex-col h-screen w-full">
                         <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
                             <div class="flex items-center space-x-3">
                                 <div>
@@ -214,11 +214,11 @@
                         <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
                             <div class="h-48 flex flex-wrap content-center">
                                 <div>
-                                    <img class="inline-block mt-28 hidden xl:block" src="https://user-images.githubusercontent.com/54521023/116969935-c13d5b00-acd4-11eb-82b1-5ad2ff10fb76.png"></div>
+                                    <img class="inline-block mt-28  xl:block" src="https://user-images.githubusercontent.com/54521023/116969935-c13d5b00-acd4-11eb-82b1-5ad2ff10fb76.png"></div>
                                     <div>
                                         <img class="inline-block mt-24 md:mt-0 p-8 md:p-0"  src="https://user-images.githubusercontent.com/54521023/116969931-bedb0100-acd4-11eb-99a9-ff5e0ee9f31f.png"></div>
                                         <div>
-                                            <img class="inline-block mt-28 hidden lg:block" src="https://user-images.githubusercontent.com/54521023/116969939-c1d5f180-acd4-11eb-8ad4-9ab9143bdb50.png"></div>
+                                            <img class="inline-block mt-28 lg:block" src="https://user-images.githubusercontent.com/54521023/116969939-c1d5f180-acd4-11eb-8ad4-9ab9143bdb50.png"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -274,15 +274,16 @@
                 <h1 class="text-center text-4xl font-medium mb-8">Our Product</h1>
                 <div class="flex items-center justify-center w-[77%] mx-auto h-full py-24 sm:py-8 px-4">
                     <div class="w-full relative flex items-center justify-center">
-                        <button aria-label="slide backward" class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+                        <button aria-label="slide backward" class="absolute bg-white h-10 w-10 rounded-full flex flex-col justify-center items-center z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
                             <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
                         <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
                             <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
+                               
+                                <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
+                                    <img src="./coupleBatik01.jpeg" alt="black chair and white table" class="object-cover object-center w-80 h-full" />
                                     <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                                         <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 1</h2>
                                         <div class="flex h-full items-end pb-6">
@@ -290,8 +291,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/DWrGxX6/carosel-2.png" alt="sitting area" class="object-cover object-center w-full" />
+
+                                <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
+                                    <img src="./coupleBatik02.jpeg" alt="sitting area" class="object-cover object-center w-80" />
                                     <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                                         <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
                                         <div class="flex h-full items-end pb-6">
@@ -299,8 +301,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/tCfVky2/carosel-3.png" alt="sitting area" class="object-cover object-center w-full" />
+                                <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
+                                    <img src="./coupleBatik03.jpg" alt="sitting area" class="object-cover object-center w-80" />
                                     <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                                         <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
                                         <div class="flex h-full items-end pb-6">
@@ -391,8 +393,8 @@
                                 </div>
                             </div>
                         </div>
-                        <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
-                            <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 bg-white h-10 w-10 rounded-full flex flex-col justify-center items-center focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+                            <svg class="dark:text-gray-900 focus:fill-gray-400" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
@@ -456,7 +458,9 @@
         function goNext() {
             defaultTransform = defaultTransform - 398;
             var slider = document.getElementById("slider");
-            if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
+            if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7){
+                defaultTransform = 0
+            }
             slider.style.transform = "translateX(" + defaultTransform + "px)";
         }
         next.addEventListener("click", goNext);
