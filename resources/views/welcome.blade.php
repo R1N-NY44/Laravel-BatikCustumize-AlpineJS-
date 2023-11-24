@@ -281,116 +281,21 @@
                         </button>
                         <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
                             <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                               
-                                <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
-                                    <img src="./coupleBatik01.jpeg" alt="black chair and white table" class="object-cover object-center w-80 h-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 1</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
+                               @forelse ($Carousel as $item)
+                               <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
+                                <img src="{{$item['Img']}}" alt="black chair and white table" class="object-cover object-center w-80 h-full" />
+                                <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                    <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white">{{$item['Desc']}}</h2>
+                                    <div class="flex h-full items-end pb-6">
+                                        <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">{{$item['Desc']}}</h3>
                                     </div>
                                 </div>
-
-                                <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
-                                    <img src="./coupleBatik02.jpeg" alt="sitting area" class="object-cover object-center w-80" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
                                 </div>
-                                <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
-                                    <img src="./coupleBatik03.jpg" alt="sitting area" class="object-cover object-center w-80" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/rFsGfr5/carosel-4.png" alt="sitting area" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/DWrGxX6/carosel-2.png" alt="sitting area" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/tCfVky2/carosel-3.png" alt="sitting area" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/rFsGfr5/carosel-4.png" alt="sitting area" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/fDngH9G/carosel-1.png" alt="black chair and white table" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/DWrGxX6/carosel-2.png" alt="sitting area" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/tCfVky2/carosel-3.png" alt="sitting area" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                                    <img src="https://i.ibb.co/rFsGfr5/carosel-4.png" alt="sitting area" class="object-cover object-center w-full" />
-                                    <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                        <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2>
-                                        <div class="flex h-full items-end pb-6">
-                                            <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900">Minimal Interior</h3>
-                                        </div>
-                                    </div>
-                                </div>
+                               @empty
+                                   
+                               @endforelse
+                                
+                                
                             </div>
                         </div>
                         <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 bg-white h-10 w-10 rounded-full flex flex-col justify-center items-center focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
