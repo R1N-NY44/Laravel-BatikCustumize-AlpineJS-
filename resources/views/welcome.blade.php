@@ -285,9 +285,9 @@
                                <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
                                 <img src="{{$item['Img']}}" alt="black chair and white table" class="object-cover object-center w-80 h-full" />
                                 <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                    <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white">{{$item['Desc']}}</h2>
+                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">{{$item['Desc']}}</h3>
                                     <div class="flex h-full items-end pb-6">
-                                        <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">{{$item['Desc']}}</h3>
+                                        <h2 class="lg:text-md font-mono leading-4 text-base lg:leading-5 text-white">{{$item['Price']}}</h2>
                                     </div>
                                 </div>
                                 </div>
