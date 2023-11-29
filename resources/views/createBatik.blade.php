@@ -17,6 +17,10 @@
     <!-- {{-- Daisy UI --}} -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.2.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    {{-- Alpine Js --}}
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <title>Document</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -215,74 +219,97 @@
             <h1 class="text-center text-4xl text-[#8a5151] font-medium mb-10">Customize Your Batik</h1>
             <div class="flex justify-center space-x-4 font-mono text-white text-sm font-bold leading-6 bg-stripes-blue rounded-lg">
                 <div class="max-w-[1280px] rounded-lg flex justify-center bg-blue-500 p-4 shadow-lg">
-                    <div class="w-full grid grid-cols-9 gap-3">
+                    {{------------------------------------------------------------------------
+                    *                                  INFO
+                    * -----------------------------------------------------------------------
+                    * Variabel yang digunakan :
+                    * Design (String) :
+                    *          1. Kemeja Cowok
+                    *          2. Kutu Baru
+                    *          3. Blazer
+                    *          4. ???
+                    *
+                    * Motif (String) :
+                    *          1. Motif Batik Basurek
+                    *          2. Motif Batik Sekar Jagad
+                    *          3. Motif Batik Ceplok
+                    *          4. Motif Batik Tujuh Rupa
+                    *
+                    * Metode penamaan file : 'Butik/' + Design + Motif + '.png'
+                    * Hasil : 'Butik/Kutu Baru Motif Batik Tujuh Rupa 1.png'
+                    *------------------------------------------------------------------------}}
+
+                    <div class="w-full grid grid-cols-9 gap-3" x-data="{
+                        //For edit form just change this value to the value from database
+                        motif: 1, // Set the default value for 'motif' to 1
+                        desain: 'Kemeja Cowok', // Set the default value for 'desain' to 'BESAR'
+                    }">
                         {{-- Display Preview --}}
                         <div class="bg-gray-300 col-span-4 w-full flex flex-col p-12">
+
                             {{-- Display --}}
-                            <img src="Butik/Kemeja Cowok.png" alt="">
+                            <img :src="'Butik/' + desain + motif + '.png'" alt="">
 
                             {{-- Design Option --}}
                             <div class="mt-8">
 
+                                {{-- bagian ini looping sebanyak jumpah motif,
+                                    variabel motif pasang di <input id="varMotif" value="varMotif"> dan <label for="varMotif">--}}
+
+                                {{-- Section for looping --}}
                                 <div class="inline-block radio mr-24">
-                                    <input name="answer" type="radio" id="A1" hidden="hidden" value="1"/>
-                                    <label for="A1" class="-mt-1 -ml-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-28">
-                                        <img src="Butik/Kemeja Cowok.png" alt="">
+                                    <input name="answer" x-model="desain" type="radio" id="id:Kemeja Cowok" hidden="hidden" value="Kemeja Cowok"/>
+                                    <label for="id:Kemeja Cowok" class="-mt-1 -ml-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-28">
+                                        <img :src="'Butik/' + 'Kemeja Cowok' + motif + '.png'" alt="">
                                     </label>
                                 </div>
+                                {{-- Section for looping --}}
+
+                                {{-- Delete this after setup --}}
                                 <div class="inline-block radio mr-24">
-                                    <input name="answer" type="radio" id="A2" hidden="hidden" value="2"/>
-                                    <label for="A2" class="-mt-1 -ml-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-28">
-                                        <img src="Butik/Kemeja Cowok.png" alt="">
+                                    <input name="answer" x-model="desain" type="radio" id="B2" hidden="hidden" value="KutuBaru"/>
+                                    <label for="B2" class="-mt-1 -ml-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-28">
+                                        <img :src="'Butik/' + 'KutuBaru' + motif + '.png'" alt="">
                                     </label>
                                 </div>
-                                <div class="inline-block radio mr-24">
-                                    <input name="answer" type="radio" id="A3" hidden="hidden" value="3"/>
-                                    <label for="A3" class="-mt-1 -ml-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-28">
-                                        <img src="Butik/Kemeja Cowok.png" alt="">
-                                    </label>
-                                </div>
-                                <div class="inline-block radio">
-                                    <input name="answer" type="radio" id="A4" hidden="hidden" value="4"/>
-                                    <label for="A4" class="-mt-1 -ml-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-28">
-                                        <img src="Butik/Kemeja Cowok.png" alt="">
-                                    </label>
-                                </div>
+                                {{-- Delete this after setup --}}
 
                             </div>
+
                         </div>
+
                         {{-- Additional Content --}}
                         <div class="bg-gray-600 col-span-5 w-full flex flex-row pl-5 pt-5">
 
                             <div class="inline-block radio mr-40">
-                                <input name="motifKain" type="radio" id="motifKain1" hidden="hidden" value="1"/>
+                                <input name="motifKain" x-model="motif" type="radio" id="motifKain1" hidden="hidden" value="1"/>
                                 <label for="motifKain1" class="-ml-1 -mt-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-10 ">
-                                    {{-- <img src="Butik/Kemeja Cowok.png" alt=""> --}}
-                                    <p class="text-black">Sutra</p>
+                                    <img src="Butik/motif1.png" alt="">
+                                    {{-- <p class="text-black">Motif 1</p> --}}
                                 </label>
                             </div>
 
                             <div class="inline-block radio mr-40">
-                                <input name="motifKain" type="radio" id="motifKain2" hidden="hidden" value="2"/>
+                                <input name="motifKain" x-model="motif" type="radio" id="motifKain2" hidden="hidden" value="2"/>
                                 <label for="motifKain2" class="-ml-1 -mt-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-10 ">
-                                    {{-- <img src="Butik/Kemeja Cowok.png" alt=""> --}}
-                                    <p class="text-black">Katun</p>
+                                    <img src="Butik/motif2.png" alt="">
+                                    {{-- <p class="text-black">Motif 2</p> --}}
                                 </label>
                             </div>
 
                             <div class="inline-block radio mr-40">
-                                <input name="motifKain" type="radio" id="motifKain3" hidden="hidden" value="3"/>
+                                <input name="motifKain" x-model="motif" type="radio" id="motifKain3" hidden="hidden" value="3"/>
                                 <label for="motifKain3" class="-ml-1 -mt-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-10 ">
-                                    {{-- <img src="Butik/Kemeja Cowok.png" alt=""> --}}
-                                    <p class="text-black">Dobby</p>
+                                    <img src="Butik/motif3.png" alt="">
+                                    {{-- <p class="text-black">Motif 3</p> --}}
                                 </label>
                             </div>
 
                             <div class="inline-block radio mr-40">
-                                <input name="motifKain" type="radio" id="motifKain4" hidden="hidden" value="4"/>
+                                <input name="motifKain" x-model="motif" type="radio" id="motifKain4" hidden="hidden" value="4"/>
                                 <label for="motifKain4" class="-ml-1 -mt-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-10 ">
-                                    {{-- <img src="Butik/Kemeja Cowok.png" alt=""> --}}
-                                    <p class="text-black">Sifon</p>
+                                    <img src="Butik/motif4.png" alt="">
+                                    {{-- <p class="text-black">Motif 4</p> --}}
                                 </label>
                             </div>
 
