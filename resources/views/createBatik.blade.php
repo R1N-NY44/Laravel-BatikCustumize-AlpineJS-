@@ -217,8 +217,8 @@
         <div class="relative rounded-xl overflow-auto mt-10">
             {{-- Title --}}
             <h1 class="text-center text-4xl text-[#8a5151] font-medium mb-10">Customize Your Batik</h1>
-            <div class="flex justify-center space-x-4 font-mono text-white text-sm font-bold leading-6 bg-stripes-blue rounded-lg">
-                <div class="max-w-[1280px] rounded-lg flex justify-center bg-blue-500 p-4 shadow-lg">
+            <div class="flex justify-center space-x-4 text-white text-sm font-bold leading-6 rounded-lg mb-10">
+                <div class="max-w-[1280px] rounded-lg flex justify-center bg-white p-4 shadow-lg">
                     {{------------------------------------------------------------------------
                     *                                  INFO
                     * -----------------------------------------------------------------------
@@ -239,83 +239,162 @@
                     * Hasil : 'Butik/Kutu Baru Motif Batik Tujuh Rupa 1.png'
                     *------------------------------------------------------------------------}}
 
-                    <div class="w-full grid grid-cols-9 gap-3" x-data="{
+                    <div class="flex w-[1280px] h-[720px]" x-data="{
                         //For edit form just change this value to the value from database
-                        motif: 1, // Set the default value for 'motif' to 1
+                        motif: 'Motif Batik Tujuh Rupa', // Set the default value for 'motif' to 1
                         desain: 'Kemeja Cowok', // Set the default value for 'desain' to 'BESAR'
-                    }">
+                        }">
                         {{-- Display Preview --}}
-                        <div class="bg-gray-300 col-span-4 w-full flex flex-col p-12">
-
+                        <div class=" col-span-4 w-[45%] flex flex-col gap-10 items-center pt-10">
                             {{-- Display --}}
-                            <img :src="'Butik/' + desain + motif + '.png'" alt="">
+
+                            <div class="">
+                                <img class="object-cover object-center w-full h-[348px]" :src="'Butik/' + desain + ' ' + motif + '.png'" alt="">
+                            </div>
 
                             {{-- Design Option --}}
-                            <div class="mt-8">
+                            <div class="mt-8 mx-auto items-center justify-center">
 
                                 {{-- bagian ini looping sebanyak jumpah motif,
                                     variabel motif pasang di <input id="varMotif" value="varMotif"> dan <label for="varMotif">--}}
 
-                                {{-- Section for looping --}}
-                                <div class="inline-block radio mr-24">
-                                    <input name="answer" x-model="desain" type="radio" id="id:Kemeja Cowok" hidden="hidden" value="Kemeja Cowok"/>
-                                    <label for="id:Kemeja Cowok" class="-mt-1 -ml-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-28">
-                                        <img :src="'Butik/' + 'Kemeja Cowok' + motif + '.png'" alt="">
+                                <div class="inline-block mx-4">
+                                    <input class="peer/desain1" name="answer" x-model="desain" type="radio" id="id:Kemeja Cowok" hidden="hidden" value="Kemeja Cowok"/>
+                                    <label for="id:Kemeja Cowok" class="peer-checked/desain1:border-2 peer-checked/desain1:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
+                                        <img class="w-full" :src="'Butik/' + 'Kemeja Cowok' + ' ' + motif + '.png'" alt="">
                                     </label>
                                 </div>
-                                {{-- Section for looping --}}
 
-                                {{-- Delete this after setup --}}
-                                <div class="inline-block radio mr-24">
-                                    <input name="answer" x-model="desain" type="radio" id="B2" hidden="hidden" value="KutuBaru"/>
-                                    <label for="B2" class="-mt-1 -ml-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-28">
-                                        <img :src="'Butik/' + 'KutuBaru' + motif + '.png'" alt="">
+                                <div class="inline-block mx-4 ">
+                                    <input class="peer/desain2" name="answer" x-model="desain" type="radio" id="id:Kutu Baru" hidden="hidden" value="Kutu Baru"/>
+                                    <label for="id:Kutu Baru" class="peer-checked/desain2:border-2 peer-checked/desain2:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
+                                        <img class="w-full" :src="'Butik/' + 'Kutu Baru' + ' ' + motif + '.png'" alt="">
                                     </label>
                                 </div>
-                                {{-- Delete this after setup --}}
+                                <div class="inline-block mx-4">
+                                    <input class="peer/desain3" name="answer" x-model="desain" type="radio" id="id:Blazer" hidden="hidden" value="Blazer"/>
+                                    <label for="id:Blazer" class="peer-checked/desain3:border-2 peer-checked/desain3:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
+                                        <img class="w-full" :src="'Butik/' + 'Blazer' + ' ' + motif + '.png'" alt="">
+                                    </label>
+                                </div>
 
                             </div>
 
                         </div>
 
                         {{-- Additional Content --}}
-                        <div class="bg-gray-600 col-span-5 w-full flex flex-row pl-5 pt-5">
-
-                            <div class="inline-block radio mr-40">
-                                <input name="motifKain" x-model="motif" type="radio" id="motifKain1" hidden="hidden" value="1"/>
-                                <label for="motifKain1" class="-ml-1 -mt-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-10 ">
-                                    <img src="Butik/motif1.png" alt="">
-                                    {{-- <p class="text-black">Motif 1</p> --}}
-                                </label>
+                        <div class="col-span-5 w-[55%] mx-auto ">
+                            {{-- Title --}}
+                            <div class="mb-4">
+                                <input type="text" class="text-5xl text-[#8a5151] border-none rounded-md w-full py-4 mt-4" placeholder="Custom Title Here">
                             </div>
 
-                            <div class="inline-block radio mr-40">
-                                <input name="motifKain" x-model="motif" type="radio" id="motifKain2" hidden="hidden" value="2"/>
-                                <label for="motifKain2" class="-ml-1 -mt-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-10 ">
-                                    <img src="Butik/motif2.png" alt="">
-                                    {{-- <p class="text-black">Motif 2</p> --}}
+                            <h1 class="text-center text-4xl text-[#8a5151] font-medium">Batik Motif</h1>
+                            {{-- Motif Option --}}
+                            <div class="grid grid-cols-2 pl-2 text-black mb-4">
+
+                                <input class="peer/motifKain1 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain1" value="Motif Batik Tujuh Rupa"/>
+                                <label for="motifKain1" class="m-7 peer-checked/motifKain1:text-[#8a5151] peer-checked/motifKain1:shadow-2xl h-[100px] rounded-xl">
+                                    <div class="rounded-xl">
+                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Tujuh Rupa.png">
+                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
+                                                <strong class=" font-medium text-xl">Motif Batik Tujuh Rupa</strong>
+                                                <span class="text-slate-500 font-medium">Pekalongan, Center Jawa.</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </label>
+
+                                <input class="peer/motifKain2 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain2" value="Motif Batik Sekar Jagad"/>
+                                <label for="motifKain2" class="m-7 peer-checked/motifKain2:text-[#8a5151] peer-checked/motifKain2:shadow-2xl h-[100px] rounded-xl">
+                                    <div class="rounded-xl">
+                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Sekar Jagad.png">
+                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
+                                                <strong class=" font-medium text-xl">Motif Batik Sekar Jagad</strong>
+                                                <span class="text-slate-500 font-medium">Solo & Yogyakarta.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <input class="peer/motifKain3 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain3" value="Motif Batik Ceplok"/>
+                                <label for="motifKain3" class="m-7 peer-checked/motifKain3:text-[#8a5151] peer-checked/motifKain3:shadow-2xl h-[100px] rounded-xl">
+                                    <div class="rounded-xl">
+                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Ceplok.png">
+                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
+                                                <strong class=" font-medium text-xl">Motif Batik Ceplok</strong>
+                                                <span class="text-slate-500 font-medium">Yogyakarta, Bigcity.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <input class="peer/motifKain4 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain4" value="Motif Batik Basurek"/>
+                                <label for="motifKain4" class="m-7 peer-checked/motifKain4:text-[#8a5151] peer-checked/motifKain4:shadow-2xl h-[100px] rounded-xl">
+                                    <div class="rounded-xl">
+                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Basurek.png">
+                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
+                                                <strong class=" font-medium text-xl">Motif Batik Basurek</strong>
+                                                <span class="text-slate-500 font-medium">Bengkulu, Southwest of Sumatra Island.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+
                             </div>
 
-                            <div class="inline-block radio mr-40">
-                                <input name="motifKain" x-model="motif" type="radio" id="motifKain3" hidden="hidden" value="3"/>
-                                <label for="motifKain3" class="-ml-1 -mt-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-10 ">
-                                    <img src="Butik/motif3.png" alt="">
-                                    {{-- <p class="text-black">Motif 3</p> --}}
-                                </label>
-                            </div>
+                            <h1 class="text-center text-4xl text-[#8a5151] font-medium">Fabric Material</h1>
+                            {{-- Fabric Option --}}
+                            <div class="grid grid-cols-2 pl-2 text-black mb-4">
 
-                            <div class="inline-block radio mr-40">
-                                <input name="motifKain" x-model="motif" type="radio" id="motifKain4" hidden="hidden" value="4"/>
-                                <label for="motifKain4" class="-ml-1 -mt-1 px-2 py-1 rounded-lg flex justify-center items-center text-3xl font-bold w-24 h-10 ">
-                                    <img src="Butik/motif4.png" alt="">
-                                    {{-- <p class="text-black">Motif 4</p> --}}
+                                <input class="peer/fabricMaterial1 sr-only" name="material" x-model="material" type="radio" id="fabricMaterial1" value="Silk"/>
+                                <label for="fabricMaterial1" class="m-7 peer-checked/fabricMaterial1:text-[#8a5151] peer-checked/fabricMaterial1:shadow-2xl h-[100px] rounded-xl">
+                                    <div class="rounded-xl">
+                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Silk.jpg">
+                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
+                                                <strong class=" font-medium text-xl">Silk</strong>
+                                                <span class="text-slate-500 font-medium">Smooth, soft, glossy, exclusive.</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </label>
+
+                                <input class="peer/fabricMaterial2 sr-only" name="material" x-model="material" type="radio" id="fabricMaterial2" value="Cotton"/>
+                                <label for="fabricMaterial2" class="m-7 peer-checked/fabricMaterial2:text-[#8a5151] peer-checked/fabricMaterial2:shadow-2xl h-[100px] rounded-xl">
+                                    <div class="rounded-xl">
+                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Cotton.jpg">
+                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
+                                                <strong class=" font-medium text-xl">Cotton</strong>
+                                                <span class="text-slate-500 font-medium">Soft, lightweight, comfortable, natural.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </label>
+
                             </div>
+                            {{-- Form --}}
+                            <div class="hidden">
+                                <input class="text-black" type="text" :value="'Butik/' + desain + ' ' + motif + '.png'">
+                            </div>
+                            {{-- end form --}}
+                            {{-- <div class="bg-gray-100 p-10"></div> --}}
+                            {{-- <div class="bg-gray-200 p-10 grid grid-cols-2 gap-4">
+                                <div class="bg-black p-5"></div>
+                                <div class="bg-black p-5"></div>
+                                <div class="bg-black p-5"></div>
+
+                            </div> --}}
 
                         </div>
 
                     </div>
+
                 </div>
             </div>
         </div>

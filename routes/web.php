@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', [UserController::class,'index']);
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('createBatik');
 });
 
 Route::get('/dashboard', function () {
