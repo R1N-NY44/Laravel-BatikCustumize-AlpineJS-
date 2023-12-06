@@ -15,10 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', [UserController::class,'index']);
+Route::get('/', [UserController::class,'index']);
 
-Route::get('/', function () {
+Route::get('/custom', function () {
     return view('createBatik');
+});
+
+Route::get('/home', function () {
+    return view('dashboardUser');
 });
 
 Route::get('/dashboard', function () {

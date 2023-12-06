@@ -212,189 +212,121 @@
 
     {{-- Content --}}
     <div class="mx-auto min-h-screen pt-[73px]">
-        {{-- Customize Section --}}
-        <div class="relative rounded-xl overflow-auto mt-10">
-            {{-- Title --}}
-            <h1 class="text-center text-4xl text-[#8a5151] font-medium mb-10">Customize Your Batik</h1>
-            <div class="flex justify-center space-x-4 text-white text-sm font-bold leading-6 rounded-lg mb-10">
-                <div class="max-w-[1280px] rounded-lg flex justify-center bg-white p-4 shadow-lg">
-                    {{------------------------------------------------------------------------
-                    *                                  INFO
-                    * -----------------------------------------------------------------------
-                    * Variabel yang digunakan :
-                    * Design (String) :
-                    *          1. Kemeja Cowok
-                    *          2. Kutu Baru
-                    *          3. Blazer
-                    *          4. ???
-                    *
-                    * Motif (String) :
-                    *          1. Motif Batik Basurek
-                    *          2. Motif Batik Sekar Jagad
-                    *          3. Motif Batik Ceplok
-                    *          4. Motif Batik Tujuh Rupa
-                    *
-                    * Metode penamaan file : 'Butik/' + Design + Motif + '.png'
-                    * Hasil : 'Butik/Kutu Baru Motif Batik Tujuh Rupa 1.png'
-                    *------------------------------------------------------------------------}}
+        <div class="mt-12 w-[1480px] mx-auto">
+            <div class="p-10 grid grid-cols-4 gap-x-14 gap-y-8">
 
-                    <div class="flex w-[1280px] h-[720px]" x-data="{
-                        //For edit form just change this value to the value from database
-                        motif: 'Motif Batik Tujuh Rupa', // Set the default value for 'motif' to 1
-                        desain: 'Kemeja Cowok', // Set the default value for 'desain' to 'BESAR'
-                        }">
-                        {{-- Display Preview --}}
-                        <div class=" col-span-4 w-[45%] flex flex-col gap-10 items-center pt-10">
-                            {{-- Display --}}
+                <div class="bg-gray-200 border-2 border-white backdrop-filter backdrop-blur-sm shadow-2xl rounded-xl p-5">
 
-                            <div class="">
-                                <img class="object-cover object-center w-full h-[348px]" :src="'Butik/' + desain + ' ' + motif + '.png'" alt="">
-                            </div>
+                    <div class="flex items-center justify-between text-white mb-5">
+                        <h1 class="-ml-10 -mt-36 text-xl font-semibold bg-gray-200  text-gray-600 border-2 border-white shadow-lg rounded-xl px-2 py-1">My Collection 1</h1>
+                        <div class="flex flex-col gap-2 -mr-10 -mt-3">
+                            {{-- Custom Button --}}
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3792 0.558914C12.7372 0.201041 13.2226 0 13.7288 0C14.2349 0 14.7204 0.201041 15.0784 0.558914L17.4406 2.92123C17.618 3.09851 17.7586 3.30898 17.8546 3.54064C17.9506 3.77229 18 4.02059 18 4.27134C18 4.52209 17.9506 4.77038 17.8546 5.00204C17.7586 5.23369 17.618 5.44417 17.4406 5.62144L6.08938 16.973L0 18L1.02794 11.9105L12.3792 0.558914ZM12.1606 3.47674L14.5229 5.83906L16.091 4.27086L13.7288 1.90949L12.1606 3.47674ZM13.1723 7.18964L10.811 4.82732L2.80894 12.8296L2.32885 15.6711L5.17024 15.1919L13.1733 7.18868L13.1723 7.18964Z" fill="white"/>
+                                </svg>
+                            </button>
+                            </a>
 
-                            {{-- Design Option --}}
-                            <div class="mt-8 mx-auto items-center justify-center">
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 7.6L11.8 1V4.3C8.2 4.3 1 6.28 1 14.2C1 13.0997 3.16 10.9 11.8 10.9V14.2L19 7.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            </a>
 
-                                {{-- bagian ini looping sebanyak jumpah motif,
-                                    variabel motif pasang di <input id="varMotif" value="varMotif"> dan <label for="varMotif">--}}
-
-                                <div class="inline-block mx-4">
-                                    <input class="peer/desain1" name="answer" x-model="desain" type="radio" id="id:Kemeja Cowok" hidden="hidden" value="Kemeja Cowok"/>
-                                    <label for="id:Kemeja Cowok" class="peer-checked/desain1:border-2 peer-checked/desain1:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
-                                        <img class="w-full" :src="'Butik/' + 'Kemeja Cowok' + ' ' + motif + '.png'" alt="">
-                                    </label>
-                                </div>
-
-                                <div class="inline-block mx-4 ">
-                                    <input class="peer/desain2" name="answer" x-model="desain" type="radio" id="id:Kutu Baru" hidden="hidden" value="Kutu Baru"/>
-                                    <label for="id:Kutu Baru" class="peer-checked/desain2:border-2 peer-checked/desain2:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
-                                        <img class="w-full" :src="'Butik/' + 'Kutu Baru' + ' ' + motif + '.png'" alt="">
-                                    </label>
-                                </div>
-                                <div class="inline-block mx-4">
-                                    <input class="peer/desain3" name="answer" x-model="desain" type="radio" id="id:Blazer" hidden="hidden" value="Blazer"/>
-                                    <label for="id:Blazer" class="peer-checked/desain3:border-2 peer-checked/desain3:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
-                                        <img class="w-full" :src="'Butik/' + 'Blazer' + ' ' + motif + '.png'" alt="">
-                                    </label>
-                                </div>
-
-                            </div>
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.92 3.6H13.68V2.52C13.68 1.85165 13.4145 1.21068 12.9419 0.738091C12.4693 0.265499 11.8283 0 11.16 0H6.84C6.17165 0 5.53068 0.265499 5.05809 0.738091C4.5855 1.21068 4.32 1.85165 4.32 2.52V3.6H1.08C0.793566 3.6 0.518864 3.71379 0.316325 3.91632C0.113785 4.11886 0 4.39357 0 4.68C0 4.96643 0.113785 5.24114 0.316325 5.44368C0.518864 5.64621 0.793566 5.76 1.08 5.76H1.44V18C1.44 18.4774 1.62964 18.9352 1.96721 19.2728C2.30477 19.6104 2.76261 19.8 3.24 19.8H14.76C15.2374 19.8 15.6952 19.6104 16.0328 19.2728C16.3704 18.9352 16.56 18.4774 16.56 18V5.76H16.92C17.2064 5.76 17.4811 5.64621 17.6837 5.44368C17.8862 5.24114 18 4.96643 18 4.68C18 4.39357 17.8862 4.11886 17.6837 3.91632C17.4811 3.71379 17.2064 3.6 16.92 3.6ZM6.48 2.52C6.48 2.42452 6.51793 2.33295 6.58544 2.26544C6.65295 2.19793 6.74452 2.16 6.84 2.16H11.16C11.2555 2.16 11.347 2.19793 11.4146 2.26544C11.4821 2.33295 11.52 2.42452 11.52 2.52V3.6H6.48V2.52ZM14.4 17.64H3.6V5.76H14.4V17.64ZM7.92 8.64V14.4C7.92 14.6864 7.80622 14.9611 7.60368 15.1637C7.40114 15.3662 7.12643 15.48 6.84 15.48C6.55357 15.48 6.27886 15.3662 6.07632 15.1637C5.87379 14.9611 5.76 14.6864 5.76 14.4V8.64C5.76 8.35357 5.87379 8.07886 6.07632 7.87632C6.27886 7.67378 6.55357 7.56 6.84 7.56C7.12643 7.56 7.40114 7.67378 7.60368 7.87632C7.80622 8.07886 7.92 8.35357 7.92 8.64ZM12.24 8.64V14.4C12.24 14.6864 12.1262 14.9611 11.9237 15.1637C11.7211 15.3662 11.4464 15.48 11.16 15.48C10.8736 15.48 10.5989 15.3662 10.3963 15.1637C10.1938 14.9611 10.08 14.6864 10.08 14.4V8.64C10.08 8.35357 10.1938 8.07886 10.3963 7.87632C10.5989 7.67378 10.8736 7.56 11.16 7.56C11.4464 7.56 11.7211 7.67378 11.9237 7.87632C12.1262 8.07886 12.24 8.35357 12.24 8.64Z" fill="white"/>
+                                </svg>
+                            </button>
+                            </a>
 
                         </div>
-
-                        {{-- Additional Content --}}
-                        <div class="col-span-5 w-[55%] mx-auto ">
-                            {{-- Title --}}
-                            <div class="mb-4">
-                                <input type="text" class="text-5xl text-[#8a5151] border-none rounded-md w-full py-4 mt-4" placeholder="Custom Title Here">
-                            </div>
-
-                            <h1 class="text-center text-4xl text-[#8a5151] font-medium">Batik Motif</h1>
-                            {{-- Motif Option --}}
-                            <div class="grid grid-cols-2 pl-2 text-black mb-4">
-
-                                <input class="peer/motifKain1 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain1" value="Motif Batik Tujuh Rupa"/>
-                                <label for="motifKain1" class="m-7 peer-checked/motifKain1:text-[#8a5151] peer-checked/motifKain1:shadow-2xl h-[100px] rounded-xl">
-                                    <div class="rounded-xl">
-                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Tujuh Rupa.png">
-                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
-                                                <strong class=" font-medium text-xl">Motif Batik Tujuh Rupa</strong>
-                                                <span class="text-slate-500 font-medium">Pekalongan, Center Jawa.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <input class="peer/motifKain2 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain2" value="Motif Batik Sekar Jagad"/>
-                                <label for="motifKain2" class="m-7 peer-checked/motifKain2:text-[#8a5151] peer-checked/motifKain2:shadow-2xl h-[100px] rounded-xl">
-                                    <div class="rounded-xl">
-                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Sekar Jagad.png">
-                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
-                                                <strong class=" font-medium text-xl">Motif Batik Sekar Jagad</strong>
-                                                <span class="text-slate-500 font-medium">Solo & Yogyakarta.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <input class="peer/motifKain3 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain3" value="Motif Batik Ceplok"/>
-                                <label for="motifKain3" class="m-7 peer-checked/motifKain3:text-[#8a5151] peer-checked/motifKain3:shadow-2xl h-[100px] rounded-xl">
-                                    <div class="rounded-xl">
-                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Ceplok.png">
-                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
-                                                <strong class=" font-medium text-xl">Motif Batik Ceplok</strong>
-                                                <span class="text-slate-500 font-medium">Yogyakarta, Bigcity.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <input class="peer/motifKain4 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain4" value="Motif Batik Basurek"/>
-                                <label for="motifKain4" class="m-7 peer-checked/motifKain4:text-[#8a5151] peer-checked/motifKain4:shadow-2xl h-[100px] rounded-xl">
-                                    <div class="rounded-xl">
-                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Basurek.png">
-                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
-                                                <strong class=" font-medium text-xl">Motif Batik Basurek</strong>
-                                                <span class="text-slate-500 font-medium">Bengkulu, Southwest of Sumatra Island.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-
-                            </div>
-
-                            <h1 class="text-center text-4xl text-[#8a5151] font-medium">Fabric Material</h1>
-                            {{-- Fabric Option --}}
-                            <div class="grid grid-cols-2 pl-2 text-black mb-4">
-
-                                <input class="peer/fabricMaterial1 sr-only" name="material" x-model="material" type="radio" id="fabricMaterial1" value="Silk"/>
-                                <label for="fabricMaterial1" class="m-7 peer-checked/fabricMaterial1:text-[#8a5151] peer-checked/fabricMaterial1:shadow-2xl h-[100px] rounded-xl">
-                                    <div class="rounded-xl">
-                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Silk.jpg">
-                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
-                                                <strong class=" font-medium text-xl">Silk</strong>
-                                                <span class="text-slate-500 font-medium">Smooth, soft, glossy, exclusive.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-
-                                <input class="peer/fabricMaterial2 sr-only" name="material" x-model="material" type="radio" id="fabricMaterial2" value="Cotton"/>
-                                <label for="fabricMaterial2" class="m-7 peer-checked/fabricMaterial2:text-[#8a5151] peer-checked/fabricMaterial2:shadow-2xl h-[100px] rounded-xl">
-                                    <div class="rounded-xl">
-                                        <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Cotton.jpg">
-                                            <div class="flex flex-col h-[6.3rem] py-2 pl-24">
-                                                <strong class=" font-medium text-xl">Cotton</strong>
-                                                <span class="text-slate-500 font-medium">Soft, lightweight, comfortable, natural.</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </label>
-
-                            </div>
-                            {{-- Form --}}
-                            <div class="hidden">
-                                <input class="text-black" type="text" :value="'Butik/' + desain + ' ' + motif + '.png'">
-                            </div>
-                            {{-- end form --}}
-                            {{-- <div class="bg-gray-100 p-10"></div> --}}
-                            {{-- <div class="bg-gray-200 p-10 grid grid-cols-2 gap-4">
-                                <div class="bg-black p-5"></div>
-                                <div class="bg-black p-5"></div>
-                                <div class="bg-black p-5"></div>
-
-                            </div> --}}
-
-                        </div>
-
                     </div>
 
+                    <img class="w-[310px] h-[284px] -mt-24" src="Butik/Blazer Motif Batik Tujuh Rupa.png" alt="" src="Butik/Kemeja Cowok Motif Batik Tujuh Rupa.png">
+                    {{-- <p class="text-right text-sm pt-4 -mb-3">March 28, 2020</p> --}}
                 </div>
+
+                <div class="bg-gray-200 border-2 border-white backdrop-filter backdrop-blur-sm shadow-2xl rounded-xl p-5">
+
+                    <div class="flex items-center justify-between text-white mb-5">
+                        <h1 class="-ml-10 -mt-36 text-xl font-semibold bg-gray-200  text-gray-600 border-2 border-white shadow-lg rounded-xl px-2 py-1">My Collection 1</h1>
+                        <div class="flex flex-col gap-2 -mr-10 -mt-3">
+                            {{-- Custom Button --}}
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3792 0.558914C12.7372 0.201041 13.2226 0 13.7288 0C14.2349 0 14.7204 0.201041 15.0784 0.558914L17.4406 2.92123C17.618 3.09851 17.7586 3.30898 17.8546 3.54064C17.9506 3.77229 18 4.02059 18 4.27134C18 4.52209 17.9506 4.77038 17.8546 5.00204C17.7586 5.23369 17.618 5.44417 17.4406 5.62144L6.08938 16.973L0 18L1.02794 11.9105L12.3792 0.558914ZM12.1606 3.47674L14.5229 5.83906L16.091 4.27086L13.7288 1.90949L12.1606 3.47674ZM13.1723 7.18964L10.811 4.82732L2.80894 12.8296L2.32885 15.6711L5.17024 15.1919L13.1733 7.18868L13.1723 7.18964Z" fill="white"/>
+                                </svg>
+                            </button>
+                            </a>
+
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 7.6L11.8 1V4.3C8.2 4.3 1 6.28 1 14.2C1 13.0997 3.16 10.9 11.8 10.9V14.2L19 7.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            </a>
+
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.92 3.6H13.68V2.52C13.68 1.85165 13.4145 1.21068 12.9419 0.738091C12.4693 0.265499 11.8283 0 11.16 0H6.84C6.17165 0 5.53068 0.265499 5.05809 0.738091C4.5855 1.21068 4.32 1.85165 4.32 2.52V3.6H1.08C0.793566 3.6 0.518864 3.71379 0.316325 3.91632C0.113785 4.11886 0 4.39357 0 4.68C0 4.96643 0.113785 5.24114 0.316325 5.44368C0.518864 5.64621 0.793566 5.76 1.08 5.76H1.44V18C1.44 18.4774 1.62964 18.9352 1.96721 19.2728C2.30477 19.6104 2.76261 19.8 3.24 19.8H14.76C15.2374 19.8 15.6952 19.6104 16.0328 19.2728C16.3704 18.9352 16.56 18.4774 16.56 18V5.76H16.92C17.2064 5.76 17.4811 5.64621 17.6837 5.44368C17.8862 5.24114 18 4.96643 18 4.68C18 4.39357 17.8862 4.11886 17.6837 3.91632C17.4811 3.71379 17.2064 3.6 16.92 3.6ZM6.48 2.52C6.48 2.42452 6.51793 2.33295 6.58544 2.26544C6.65295 2.19793 6.74452 2.16 6.84 2.16H11.16C11.2555 2.16 11.347 2.19793 11.4146 2.26544C11.4821 2.33295 11.52 2.42452 11.52 2.52V3.6H6.48V2.52ZM14.4 17.64H3.6V5.76H14.4V17.64ZM7.92 8.64V14.4C7.92 14.6864 7.80622 14.9611 7.60368 15.1637C7.40114 15.3662 7.12643 15.48 6.84 15.48C6.55357 15.48 6.27886 15.3662 6.07632 15.1637C5.87379 14.9611 5.76 14.6864 5.76 14.4V8.64C5.76 8.35357 5.87379 8.07886 6.07632 7.87632C6.27886 7.67378 6.55357 7.56 6.84 7.56C7.12643 7.56 7.40114 7.67378 7.60368 7.87632C7.80622 8.07886 7.92 8.35357 7.92 8.64ZM12.24 8.64V14.4C12.24 14.6864 12.1262 14.9611 11.9237 15.1637C11.7211 15.3662 11.4464 15.48 11.16 15.48C10.8736 15.48 10.5989 15.3662 10.3963 15.1637C10.1938 14.9611 10.08 14.6864 10.08 14.4V8.64C10.08 8.35357 10.1938 8.07886 10.3963 7.87632C10.5989 7.67378 10.8736 7.56 11.16 7.56C11.4464 7.56 11.7211 7.67378 11.9237 7.87632C12.1262 8.07886 12.24 8.35357 12.24 8.64Z" fill="white"/>
+                                </svg>
+                            </button>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <img class="w-[310px] h-[284px] -mt-24" src="Butik/Kutu Baru Motif Batik Tujuh Rupa.png" alt="" src="Butik/Kemeja Cowok Motif Batik Tujuh Rupa.png">
+                    {{-- <p class="text-right text-sm pt-4 -mb-3">March 28, 2020</p> --}}
+                </div>
+
+                <div class="bg-gray-200 border-2 border-white backdrop-filter backdrop-blur-sm shadow-2xl rounded-xl p-5">
+
+                    <div class="flex items-center justify-between text-white mb-5">
+                        <h1 class="-ml-10 -mt-36 text-xl font-semibold bg-gray-200  text-gray-600 border-2 border-white shadow-lg rounded-xl px-2 py-1">My Collection 1</h1>
+                        <div class="flex flex-col gap-2 -mr-10 -mt-3">
+                            {{-- Custom Button --}}
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.3792 0.558914C12.7372 0.201041 13.2226 0 13.7288 0C14.2349 0 14.7204 0.201041 15.0784 0.558914L17.4406 2.92123C17.618 3.09851 17.7586 3.30898 17.8546 3.54064C17.9506 3.77229 18 4.02059 18 4.27134C18 4.52209 17.9506 4.77038 17.8546 5.00204C17.7586 5.23369 17.618 5.44417 17.4406 5.62144L6.08938 16.973L0 18L1.02794 11.9105L12.3792 0.558914ZM12.1606 3.47674L14.5229 5.83906L16.091 4.27086L13.7288 1.90949L12.1606 3.47674ZM13.1723 7.18964L10.811 4.82732L2.80894 12.8296L2.32885 15.6711L5.17024 15.1919L13.1733 7.18868L13.1723 7.18964Z" fill="white"/>
+                                </svg>
+                            </button>
+                            </a>
+
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 7.6L11.8 1V4.3C8.2 4.3 1 6.28 1 14.2C1 13.0997 3.16 10.9 11.8 10.9V14.2L19 7.6Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            </a>
+
+                            <a href="">
+                            <button class="w-9 h-9 rounded-full  bg-gray-400 ring-gray-100 ring-2 shadow-lg text-black  flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 " aria-label="edit note" role="button">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.92 3.6H13.68V2.52C13.68 1.85165 13.4145 1.21068 12.9419 0.738091C12.4693 0.265499 11.8283 0 11.16 0H6.84C6.17165 0 5.53068 0.265499 5.05809 0.738091C4.5855 1.21068 4.32 1.85165 4.32 2.52V3.6H1.08C0.793566 3.6 0.518864 3.71379 0.316325 3.91632C0.113785 4.11886 0 4.39357 0 4.68C0 4.96643 0.113785 5.24114 0.316325 5.44368C0.518864 5.64621 0.793566 5.76 1.08 5.76H1.44V18C1.44 18.4774 1.62964 18.9352 1.96721 19.2728C2.30477 19.6104 2.76261 19.8 3.24 19.8H14.76C15.2374 19.8 15.6952 19.6104 16.0328 19.2728C16.3704 18.9352 16.56 18.4774 16.56 18V5.76H16.92C17.2064 5.76 17.4811 5.64621 17.6837 5.44368C17.8862 5.24114 18 4.96643 18 4.68C18 4.39357 17.8862 4.11886 17.6837 3.91632C17.4811 3.71379 17.2064 3.6 16.92 3.6ZM6.48 2.52C6.48 2.42452 6.51793 2.33295 6.58544 2.26544C6.65295 2.19793 6.74452 2.16 6.84 2.16H11.16C11.2555 2.16 11.347 2.19793 11.4146 2.26544C11.4821 2.33295 11.52 2.42452 11.52 2.52V3.6H6.48V2.52ZM14.4 17.64H3.6V5.76H14.4V17.64ZM7.92 8.64V14.4C7.92 14.6864 7.80622 14.9611 7.60368 15.1637C7.40114 15.3662 7.12643 15.48 6.84 15.48C6.55357 15.48 6.27886 15.3662 6.07632 15.1637C5.87379 14.9611 5.76 14.6864 5.76 14.4V8.64C5.76 8.35357 5.87379 8.07886 6.07632 7.87632C6.27886 7.67378 6.55357 7.56 6.84 7.56C7.12643 7.56 7.40114 7.67378 7.60368 7.87632C7.80622 8.07886 7.92 8.35357 7.92 8.64ZM12.24 8.64V14.4C12.24 14.6864 12.1262 14.9611 11.9237 15.1637C11.7211 15.3662 11.4464 15.48 11.16 15.48C10.8736 15.48 10.5989 15.3662 10.3963 15.1637C10.1938 14.9611 10.08 14.6864 10.08 14.4V8.64C10.08 8.35357 10.1938 8.07886 10.3963 7.87632C10.5989 7.67378 10.8736 7.56 11.16 7.56C11.4464 7.56 11.7211 7.67378 11.9237 7.87632C12.1262 8.07886 12.24 8.35357 12.24 8.64Z" fill="white"/>
+                                </svg>
+                            </button>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <img class="w-[310px] h-[284px] -mt-24" src="Butik/Kemeja Cowok Motif Batik Tujuh Rupa.png" alt="" src="Butik/Kemeja Cowok Motif Batik Tujuh Rupa.png">
+                    {{-- <p class="text-right text-sm pt-4 -mb-3">March 28, 2020</p> --}}
+                </div>
+
+
             </div>
         </div>
     </div>

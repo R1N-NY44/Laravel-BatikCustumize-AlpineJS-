@@ -51,11 +51,10 @@
                     <!-- For md screen size -->
 
                     <!-- For large screens -->
-                    <div class="dark:bg-[#755252] bg-gray-50 px-4 py-6">
+                    <div class="dark:bg-[#755252] bg-gray-50 px-4 py-3">
                         <div class="container mx-auto flex items-center justify-between">
-                            <h1 class="md:w-2/12 cursor-pointer text-gray-800 dark:text-white" aria-label="the Crib.">
-                                <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg1.svg" alt="logo">
-                               <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg1dark.svg" alt="logo">
+                            <h1 class="cursor-pointer mt-2">
+                                <img class="-my-10 h-36 w-56" src="logo.png" alt="logo">
                             </h1>
                             <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">
                                 <li>
