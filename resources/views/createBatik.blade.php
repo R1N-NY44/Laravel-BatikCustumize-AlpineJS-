@@ -48,95 +48,90 @@
             <div>
                 <div class="relative">
                     <!-- For md screen size -->
-                    <div id="md-searchbar" class="bg-white dark:bg-[#755252] hidden lg:hidden py-5 px-6 items-center justify-between">
-                        <div class="flex items-center space-x-3 text-gray-800 dark:text-white">
+                    <div id="md-searchbar" class="bg-[#755252] hidden lg:hidden py-5 px-6 items-center justify-between">
+                        <div class="flex items-center space-x-3 text-white">
                             <div>
-                               <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
-                               <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg" alt="search">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 20.25L8.625 14.625M20.25 9.75C20.25 10.6364 20.0754 11.5142 19.7362 12.3331C19.397 13.1521 18.8998 13.8962 18.273 14.523C17.6462 15.1498 16.9021 15.647 16.0831 15.9862C15.2642 16.3254 14.3864 16.5 13.5 16.5C12.6136 16.5 11.7358 16.3254 10.9169 15.9862C10.0979 15.647 9.35383 15.1498 8.72703 14.523C8.10023 13.8962 7.60303 13.1521 7.26381 12.3331C6.92459 11.5142 6.75 10.6364 6.75 9.75C6.75 7.95979 7.46116 6.2429 8.72703 4.97703C9.9929 3.71116 11.7098 3 13.5 3C15.2902 3 17.0071 3.71116 18.273 4.97703C19.5388 6.2429 20.25 7.95979 20.25 9.75Z" stroke="#EAEAEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
-                            <input type="text" placeholder="Search for products" class="text-sm leading-none dark:text-gray-300 dark:bg-[#755252] text-gray-600 focus:outline-none" />
+                            <input type="text" placeholder="Search for products" class="text-sm leading-none text-gray-300 bg-[#755252] focus:outline-none" />
                         </div>
                         <div class="space-x-6">
-                            <button aria-label="view favourites" class="text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
-                                <img class="w-5 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg3.svg" alt="favourites">
-                                <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg3dark.svg" alt="favourites">
-                            </button>
-                            <button aria-label="go to cart" class="text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
-                                <img class="w-5 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
-                                <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
+                            <button aria-label="view favourites" class="text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5 3C14.76 3 13.09 3.81 12 5.09C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.42 2 8.5C2 12.28 5.4 15.36 10.55 20.04L12 21.35L13.45 20.03C18.6 15.36 22 12.28 22 8.5C22 5.42 19.58 3 16.5 3ZM12.1 18.55L12 18.65L11.9 18.55C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5C9.04 5 10.54 5.99 11.07 7.36H12.94C13.46 5.99 14.96 5 16.5 5C18.5 5 20 6.5 20 8.5C20 11.39 16.86 14.24 12.1 18.55Z" fill="#EAEAEA"/>
+                                </svg>
                             </button>
                         </div>
                     </div>
                     <!-- For md screen size -->
 
                     <!-- For large screens -->
-                    <div class="dark:bg-[#755252] bg-gray-50 px-4 py-3">
+                    <div class="bg-[#755252] px-4 py-3">
                         <div class="container mx-auto flex items-center justify-between">
                             <h1 class="cursor-pointer mt-2">
                                 <img class="-my-10 h-36 w-56" src="logo.png" alt="logo">
                             </h1>
                             <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">
                                 <li>
-                                    <a href="javascript:void(0)" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Home</a>
+                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline hover:underline-offset-[15px]">Home</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Category</a>
+                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline hover:underline-offset-[15px]">Category</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Collection</a>
+                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 underline underline-offset-[15px]">Collection</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0)" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Support</a>
+                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline hover:underline-offset-[15px]">Support</a>
                                 </li>
                             </ul>
 
                             <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
                                 <div class="hidden lg:flex items-center">
-                                    <button onclick="toggleSearch()" aria-label="search items" class="w-5 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
-                                        <img class="transform rotate-90 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
-                                        <img class="transform rotate-90 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg" alt="search">
+                                    <button onclick="toggleSearch()" aria-label="search items" class="w-5 hover:text-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 20.25L8.625 14.625M20.25 9.75C20.25 10.6364 20.0754 11.5142 19.7362 12.3331C19.397 13.1521 18.8998 13.8962 18.273 14.523C17.6462 15.1498 16.9021 15.647 16.0831 15.9862C15.2642 16.3254 14.3864 16.5 13.5 16.5C12.6136 16.5 11.7358 16.3254 10.9169 15.9862C10.0979 15.647 9.35383 15.1498 8.72703 14.523C8.10023 13.8962 7.60303 13.1521 7.26381 12.3331C6.92459 11.5142 6.75 10.6364 6.75 9.75C6.75 7.95979 7.46116 6.2429 8.72703 4.97703C9.9929 3.71116 11.7098 3 13.5 3C15.2902 3 17.0071 3.71116 18.273 4.97703C19.5388 6.2429 20.25 7.95979 20.25 9.75Z" stroke="#EAEAEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
                                     </button>
-                                    <input id="searchInput" type="text" placeholder="search" class="hidden text-sm dark:bg-[#755252] dark:placeholder-gray-300 text-white rounded ml-1 border border-transparent focus:outline-none focus:border-gray-400 px-1" />
+                                    <input id="searchInput" type="text" placeholder="search" class="hidden text-sm bg-[#755252] placeholder-gray-300 text-white rounded ml-1 border border-transparent focus:outline-none focus:border-gray-400 px-1" />
                                 </div>
                                 <div class="hidden lg:flex items-center space-x-4 xl:space-x-8">
-                                    <button aria-label="view favourites" class="w-6 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
-                                        <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg3.svg" alt="favourites">
-                                        <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg3dark.svg" alt="favourites">
-                                    </button>
-                                    <button aria-label="go to cart" class="w-6 text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
-                                        <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
-                                        <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
+                                    <button aria-label="view favourites" class="w-6 hover:text-gray-300 text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.5 3C14.76 3 13.09 3.81 12 5.09C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.42 2 8.5C2 12.28 5.4 15.36 10.55 20.04L12 21.35L13.45 20.03C18.6 15.36 22 12.28 22 8.5C22 5.42 19.58 3 16.5 3ZM12.1 18.55L12 18.65L11.9 18.55C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5C9.04 5 10.54 5.99 11.07 7.36H12.94C13.46 5.99 14.96 5 16.5 5C18.5 5 20 6.5 20 8.5C20 11.39 16.86 14.24 12.1 18.55Z" fill="#EAEAEA"/>
+                                        </svg>
                                     </button>
                                 </div>
 
                                 <div class="flex lg:hidden">
-                                    <button aria-label="show options" onclick="mdOptionsToggle()" class="text-black dark:text-white dark:hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
-                                        <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5.svg" alt="toggler">
-                                        <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg" alt="toggler">
+                                    <button aria-label="show options" onclick="mdOptionsToggle()" class="text-white hover:text-gray-300 hidden md:flex focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
+                                        <img class="" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg" alt="toggler">
                                     </button>
 
-                                    <button aria-label="open menu" onclick="openMenu()" class="text-black dark:text-white dark:hover:text-gray-300 md:hidden focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
-                                        <img class=" dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5.svg" alt="toggler">
-                                        <img class=" dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg" alt="toggler">
+                                    <button aria-label="open menu" onclick="openMenu()" class="text-white hover:text-gray-300 md:hidden focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
+                                        <img class="" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg5dark.svg" alt="toggler">
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- For small screen -->
-                    <div id="mobile-menu" class="hidden absolute dark:bg-[#755252] z-10 inset-0 md:hidden bg-white flex flex-col h-screen w-full">
+                    <div id="mobile-menu" class="hidden absolute bg-[#755252] z-10 inset-0 md:hidden flex flex-col h-screen w-full">
                         <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
                             <div class="flex items-center space-x-3">
                                 <div>
-                                    <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2.svg" alt="search">
-                                    <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg2dark.svg" alt="search">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 20.25L8.625 14.625M20.25 9.75C20.25 10.6364 20.0754 11.5142 19.7362 12.3331C19.397 13.1521 18.8998 13.8962 18.273 14.523C17.6462 15.1498 16.9021 15.647 16.0831 15.9862C15.2642 16.3254 14.3864 16.5 13.5 16.5C12.6136 16.5 11.7358 16.3254 10.9169 15.9862C10.0979 15.647 9.35383 15.1498 8.72703 14.523C8.10023 13.8962 7.60303 13.1521 7.26381 12.3331C6.92459 11.5142 6.75 10.6364 6.75 9.75C6.75 7.95979 7.46116 6.2429 8.72703 4.97703C9.9929 3.71116 11.7098 3 13.5 3C15.2902 3 17.0071 3.71116 18.273 4.97703C19.5388 6.2429 20.25 7.95979 20.25 9.75Z" stroke="#EAEAEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
                                 </div>
                                 <input type="text" placeholder="Search for products" class="text-sm dark:bg-[#755252] text-gray-600 placeholder-gray-600 dark:placeholder-gray-300 focus:outline-none" />
                             </div>
 
                             <button onclick="closeMenu()" aria-label="close menu" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-600">
                                 <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg6.svg" alt="cross">
-                                <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg6dark.svg" alt="cross">
+                                {{-- <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg6dark.svg" alt="cross"> --}}
                             </button>
                         </div>
                         <div class="mt-6 p-4">
@@ -146,7 +141,7 @@
                                         Home
                                         <div>
                                             <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
-                                            <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow">
+                                            {{-- <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow"> --}}
                                         </div>
                                     </a>
                                 </li>
@@ -155,7 +150,7 @@
                                         Category
                                         <div>
                                             <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
-                                            <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow">
+                                            {{-- <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow"> --}}
                                         </div>
                                     </a>
                                 </li>
@@ -164,7 +159,7 @@
                                         Collection
                                         <div>
                                             <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
-                                            <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow">
+                                            {{-- <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow"> --}}
                                         </div>
                                     </a>
                                 </li>
@@ -173,7 +168,7 @@
                                         Support
                                         <div>
                                             <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7.svg" alt="arrow">
-                                            <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow">
+                                            {{-- <img class="dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg7dark.svg" alt="arrow"> --}}
                                         </div>
                                     </a>
                                 </li>
@@ -185,7 +180,7 @@
                                     <a href="javascript:void(0)" class="dark:text-white text-gray-800 flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
                                         <div>
                                             <img class="w-5 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4.svg" alt="bag">
-                                            <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag">
+                                            {{-- <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg4dark.svg" alt="bag"> --}}
                                         </div>
                                         <p class="text-base">Cart</p>
                                     </a>
@@ -193,8 +188,14 @@
                                 <li>
                                     <a href="javascript:void(0)" class="dark:text-white text-gray-800 flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
                                         <div>
-                                            <img class="w-5 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg3.svg" alt="favourites">
-                                            <img class="w-5 dark:block hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-I-svg3dark.svg" alt="favourites">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5 3C14.76 3 13.09 3.81 12 5.09C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.42 2 8.5C2 12.28 5.4 15.36 10.55 20.04L12 21.35L13.45 20.03C18.6 15.36 22 12.28 22 8.5C22 5.42 19.58 3 16.5 3ZM12.1 18.55L12 18.65L11.9 18.55C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5C9.04 5 10.54 5.99 11.07 7.36H12.94C13.46 5.99 14.96 5 16.5 5C18.5 5 20 6.5 20 8.5C20 11.39 16.86 14.24 12.1 18.55Z" fill="#EAEAEA"/>
+                                    </svg>
+
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5 3C14.76 3 13.09 3.81 12 5.09C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.42 2 8.5C2 12.28 5.4 15.36 10.55 20.04L12 21.35L13.45 20.03C18.6 15.36 22 12.28 22 8.5C22 5.42 19.58 3 16.5 3ZM12.1 18.55L12 18.65L11.9 18.55C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5C9.04 5 10.54 5.99 11.07 7.36H12.94C13.46 5.99 14.96 5 16.5 5C18.5 5 20 6.5 20 8.5C20 11.39 16.86 14.24 12.1 18.55Z" fill="#EAEAEA"/>
+                                    </svg>
+
                                         </div>
                                         <p class="text-base">Wishlist</p>
                                     </a>
