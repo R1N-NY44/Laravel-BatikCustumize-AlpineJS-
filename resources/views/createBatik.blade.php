@@ -73,19 +73,19 @@
                             <h1 class="cursor-pointer mt-2">
                                 <img class="-my-10 h-36 w-56" src="logo.png" alt="logo">
                             </h1>
-                            <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">
+                            <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">                             
                                 <li>
-                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline hover:underline-offset-[15px]">Home</a>
+                                    <a href="{{ route("home") }}" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline {{ Route::is("home") ? "underline-offset-[15px] underline" : "hover:underline hover:underline-offset-[15px]" }}">Home</a>
                                 </li>
+                                {{-- <li>
+                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline {{ Route::is("home") }}">Category</a>
+                                </li> --}}
                                 <li>
-                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline hover:underline-offset-[15px]">Category</a>
+                                    <a href="{{ route("collections.user") }}" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 {{ Route::is("collections.*") ? "underline-offset-[15px] underline" : "hover:underline hover:underline-offset-[15px]" }}">Collection</a>
                                 </li>
-                                <li>
-                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 underline underline-offset-[15px]">Collection</a>
-                                </li>
-                                <li>
-                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline hover:underline-offset-[15px]">Support</a>
-                                </li>
+                                {{-- <li>
+                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline {{ Route::is("home") }}">Support</a>
+                                </li> --}}
                             </ul>
 
                             <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     <!-- For small screen -->
-                    <div id="mobile-menu" class="hidden absolute bg-[#755252] z-10 inset-0 md:hidden flex flex-col h-screen w-full">
+                    <div id="mobile-menu" class=" absolute bg-[#755252] z-10 inset-0 md:hidden flex flex-col h-screen w-full">
                         <div class="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 pb-4 p-4">
                             <div class="flex items-center space-x-3">
                                 <div>
@@ -211,8 +211,12 @@
 
     </div>
 
-    {{-- Content --}}
-    <div class="mx-auto min-h-screen pt-[73px]">
+    {{-- Content --}}    
+       {!! Form::open([
+          "route" => $route,
+            "method" => $method,            
+            "class" => "mx-auto min-h-screen pt-[73px]"  ,      
+       ]) !!}                    
         {{-- Customize Section --}}
         <div class="relative rounded-xl overflow-auto mt-10">
             {{-- Title --}}
@@ -241,40 +245,40 @@
 
                     <div class="flex w-[1280px] h-[720px]" x-data="{
                         //For edit form just change this value to the value from database
-                        motif: 'Motif Batik Tujuh Rupa', // Set the default value for 'motif' to 1
-                        desain: 'Kemeja Cowok', // Set the default value for 'desain' to 'BESAR'
+                        motif: '{{ $model->motives->name ?? "Motif Batik Tujuh Rupa" }}', // Set the default value for 'motif' to 1
+                        desain: '{{ $model->designs->name ?? "Kemeja Cowok" }}', // Set the default value for 'desain' to 'BESAR'
                         }">
                         {{-- Display Preview --}}
                         <div class=" col-span-4 w-[45%] flex flex-col gap-10 items-center pt-10">
                             {{-- Display --}}
 
-                            <div class="">
-                                <img class="object-cover object-center w-full h-[348px]" :src="'Butik/' + desain + ' ' + motif + '.png'" alt="">
+                            <div class="">                                                             
+                                <img class="object-cover object-center w-full h-[348px]" :src="'{{ Storage::url("public/Butik/") }}' + desain + ' ' + motif + '.png'" alt="">                                
                             </div>
 
                             {{-- Design Option --}}
                             <div class="mt-8 mx-auto items-center justify-center">
 
                                 {{-- bagian ini looping sebanyak jumpah motif,
-                                    variabel motif pasang di <input id="varMotif" value="varMotif"> dan <label for="varMotif">--}}
-
+                                    variabel motif pasang di <input id="varMotif" value="varMotif"> dan <label for="varMotif">--}}                                        
                                 <div class="inline-block mx-4">
-                                    <input class="peer/desain1" name="answer" x-model="desain" type="radio" id="id:Kemeja Cowok" hidden="hidden" value="Kemeja Cowok"/>
+                                    <input class="peer/desain1 hidden" name="design" x-model="desain" type="radio" id="id:Kemeja Cowok"  value="Kemeja Cowok"/>                                    
                                     <label for="id:Kemeja Cowok" class="peer-checked/desain1:border-2 peer-checked/desain1:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
-                                        <img class="w-full" :src="'Butik/' + 'Kemeja Cowok' + ' ' + motif + '.png'" alt="">
+                                        {{-- <img class="w-full" :src="'Butik/' + 'Kemeja Cowok' + ' ' + motif + '.png'" alt=""> --}}                                        
+                                        <img class="w-full" :src="'{{ Storage::url("public/Butik/Kemeja Cowok ") }}' + motif + '.png'" alt="">
                                     </label>
                                 </div>
 
                                 <div class="inline-block mx-4 ">
-                                    <input class="peer/desain2" name="answer" x-model="desain" type="radio" id="id:Kutu Baru" hidden="hidden" value="Kutu Baru"/>
+                                    <input class="peer/desain2 hidden" name="design" x-model="desain" type="radio" id="id:Kutu Baru"  value="Kutu Baru"/>                                
                                     <label for="id:Kutu Baru" class="peer-checked/desain2:border-2 peer-checked/desain2:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
-                                        <img class="w-full" :src="'Butik/' + 'Kutu Baru' + ' ' + motif + '.png'" alt="">
+                                        <img class="w-full" :src="'{{ Storage::url("public/Butik/Kutu Baru ") }}' + motif + '.png'" alt="">
                                     </label>
                                 </div>
-                                <div class="inline-block mx-4">
-                                    <input class="peer/desain3" name="answer" x-model="desain" type="radio" id="id:Blazer" hidden="hidden" value="Blazer"/>
+                                <div class="inline-block mx-4">                                    
+                                    <input class="peer/desain3 hidden" name="design" x-model="desain" type="radio" id="id:Blazer"  value="Blazer"/>                                    
                                     <label for="id:Blazer" class="peer-checked/desain3:border-2 peer-checked/desain3:border-[#8a5151] -mt-1 -ml-1 px-2 py-1 rounded-lg flex w-[110px] h-28">
-                                        <img class="w-full" :src="'Butik/' + 'Blazer' + ' ' + motif + '.png'" alt="">
+                                        <img class="w-full" :src="'{{ Storage::url("public/Butik/Blazer ") }}' + motif + '.png'" alt="">
                                     </label>
                                 </div>
 
@@ -285,19 +289,20 @@
                         {{-- Additional Content --}}
                         <div class="col-span-5 w-[55%] mx-auto ">
                             {{-- Title --}}
-                            <div class="mb-4">
-                                <input type="text" class="text-5xl text-[#8a5151] border-none rounded-md w-full py-4 mt-4" placeholder="Custom Title Here">
+                            <div class="mb-4 flex justify-center items-center">
+                                <input type="text" name="name" value="{{ $model->name ?? "" }}" class="text-5xl text-[#8a5151] border-none rounded-md w-[70%] py-4 mt-4" placeholder="Custom Title Here">
+                                <button class="px-10 mt-6 py-4 bg-[#755252] rounded-full text">{{$button}}</button>
                             </div>
 
                             <h1 class="text-center text-4xl text-[#8a5151] font-medium">Batik Motif</h1>
                             {{-- Motif Option --}}
                             <div class="grid grid-cols-2 pl-2 text-black mb-4">
 
-                                <input class="peer/motifKain1 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain1" value="Motif Batik Tujuh Rupa"/>
+                                <input class="peer/motifKain1 sr-only" name="motive" x-model="motif" type="radio" id="motifKain1" value="Motif Batik Tujuh Rupa"/>
                                 <label for="motifKain1" class="m-7 peer-checked/motifKain1:text-[#8a5151] peer-checked/motifKain1:shadow-2xl h-[100px] rounded-xl">
                                     <div class="rounded-xl">
                                         <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Tujuh Rupa.png">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="{{ Storage::url("Butik/Motif Batik Tujuh Rupa.png") }}">
                                             <div class="flex flex-col h-[6.3rem] py-2 pl-24">
                                                 <strong class=" font-medium text-xl">Motif Batik Tujuh Rupa</strong>
                                                 <span class="text-slate-500 font-medium">Pekalongan, Center Jawa.</span>
@@ -306,11 +311,11 @@
                                     </div>
                                 </label>
 
-                                <input class="peer/motifKain2 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain2" value="Motif Batik Sekar Jagad"/>
+                                <input class="peer/motifKain2 sr-only" name="motive" x-model="motif" type="radio" id="motifKain2" value="Motif Batik Sekar Jagad"/>
                                 <label for="motifKain2" class="m-7 peer-checked/motifKain2:text-[#8a5151] peer-checked/motifKain2:shadow-2xl h-[100px] rounded-xl">
                                     <div class="rounded-xl">
                                         <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Sekar Jagad.png">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="{{ Storage::url("Butik/Motif Batik Sekar Jagad.png") }}">
                                             <div class="flex flex-col h-[6.3rem] py-2 pl-24">
                                                 <strong class=" font-medium text-xl">Motif Batik Sekar Jagad</strong>
                                                 <span class="text-slate-500 font-medium">Solo & Yogyakarta.</span>
@@ -319,11 +324,11 @@
                                     </div>
                                 </label>
 
-                                <input class="peer/motifKain3 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain3" value="Motif Batik Ceplok"/>
+                                <input class="peer/motifKain3 sr-only" name="motive" x-model="motif" type="radio" id="motifKain3" value="Motif Batik Ceplok"/>
                                 <label for="motifKain3" class="m-7 peer-checked/motifKain3:text-[#8a5151] peer-checked/motifKain3:shadow-2xl h-[100px] rounded-xl">
                                     <div class="rounded-xl">
                                         <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Ceplok.png">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="{{ Storage::url("Butik/Motif Batik Ceplok.png") }}">
                                             <div class="flex flex-col h-[6.3rem] py-2 pl-24">
                                                 <strong class=" font-medium text-xl">Motif Batik Ceplok</strong>
                                                 <span class="text-slate-500 font-medium">Yogyakarta, Bigcity.</span>
@@ -332,11 +337,11 @@
                                     </div>
                                 </label>
 
-                                <input class="peer/motifKain4 sr-only" name="motifKain" x-model="motif" type="radio" id="motifKain4" value="Motif Batik Basurek"/>
+                                <input class="peer/motifKain4 sr-only" name="motive" x-model="motif" type="radio" id="motifKain4" value="Motif Batik Basurek"/>
                                 <label for="motifKain4" class="m-7 peer-checked/motifKain4:text-[#8a5151] peer-checked/motifKain4:shadow-2xl h-[100px] rounded-xl">
                                     <div class="rounded-xl">
                                         <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Motif Batik Basurek.png">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="{{ Storage::url("Butik/Motif Batik Basurek.png") }}">
                                             <div class="flex flex-col h-[6.3rem] py-2 pl-24">
                                                 <strong class=" font-medium text-xl">Motif Batik Basurek</strong>
                                                 <span class="text-slate-500 font-medium">Bengkulu, Southwest of Sumatra Island.</span>
@@ -347,15 +352,15 @@
 
                             </div>
 
-                            <h1 class="text-center text-4xl text-[#8a5151] font-medium">Fabric Material</h1>
+                            {{-- <h1 class="text-center text-4xl text-[#8a5151] font-medium">Fabric Material</h1> --}}
                             {{-- Fabric Option --}}
-                            <div class="grid grid-cols-2 pl-2 text-black mb-4">
+                            {{-- <div class="grid grid-cols-2 pl-2 text-black mb-4">
 
                                 <input class="peer/fabricMaterial1 sr-only" name="material" x-model="material" type="radio" id="fabricMaterial1" value="Silk"/>
                                 <label for="fabricMaterial1" class="m-7 peer-checked/fabricMaterial1:text-[#8a5151] peer-checked/fabricMaterial1:shadow-2xl h-[100px] rounded-xl">
                                     <div class="rounded-xl">
                                         <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Silk.jpg">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="{{ Storage::url("Butik/Silk.jpg") }}">
                                             <div class="flex flex-col h-[6.3rem] py-2 pl-24">
                                                 <strong class=" font-medium text-xl">Silk</strong>
                                                 <span class="text-slate-500 font-medium">Smooth, soft, glossy, exclusive.</span>
@@ -368,7 +373,7 @@
                                 <label for="fabricMaterial2" class="m-7 peer-checked/fabricMaterial2:text-[#8a5151] peer-checked/fabricMaterial2:shadow-2xl h-[100px] rounded-xl">
                                     <div class="rounded-xl">
                                         <div class="overflow-visible relative max-w-md mx-auto bg-white ring-1 ring-black/5 rounded-xl flex items-center gap-6">
-                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="Butik/Cotton.jpg">
+                                            <img class="absolute -left-6 w-28 h-28 rounded-lg" src="{{ Storage::url("Butik/Cotton.jpg") }}">
                                             <div class="flex flex-col h-[6.3rem] py-2 pl-24">
                                                 <strong class=" font-medium text-xl">Cotton</strong>
                                                 <span class="text-slate-500 font-medium">Soft, lightweight, comfortable, natural.</span>
@@ -377,7 +382,7 @@
                                     </div>
                                 </label>
 
-                            </div>
+                            </div> --}}
                             {{-- Form --}}
                             <div class="hidden">
                                 <input class="text-black" type="text" :value="'Butik/' + desain + ' ' + motif + '.png'">
@@ -390,19 +395,16 @@
                                 <div class="bg-black p-5"></div>
 
                             </div> --}}
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
-    </div>
+    {!! Form::close() !!}
 
 
      <!-- Footer -->
-     <footer class="footer footer-center p-5 bg-[#755252] text-base-content rounded">
+     <footer class="footer footer-center p-5 bg-[#755252] text-base-content rounded pb-10">
         <nav>
           <div class="grid grid-flow-col gap-4 -mb-6">
             <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-white"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
@@ -411,7 +413,7 @@
           </div>
         </nav>
         <aside>
-          <p class="text-white">Copyright © 2023 - All right reserved by Tim Joki Industries Ltd</p>
+          {{-- <p class="text-white">Copyright © 2023 - All right reserved by Tim Joki Industries Ltd</p> --}}
         </aside>
       </footer>
 
@@ -433,5 +435,46 @@
     </script>
     <!-- partial -->
     <script src='https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (session('error2'))
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'error',
+                title: '{{ session('error2') }}'
+            })
+        </script>
+    @endif
+    @if (session('success'))
+        <script>
+            const ToastSuccess = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            ToastSuccess.fire({
+                icon: 'success',
+                title: '{{ session('success') }}'
+            })
+        </script>
+    @endif
 </body>
 </html>

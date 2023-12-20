@@ -23,7 +23,7 @@
 </head>
 <body>
     <!-- Header -->
-    <div class="flex flex-wrap place-items-center fixed w-full">
+    <div class="flex flex-wrap place-items-center fixed w-full z-20">
         <!-- navbar -->
         <div class="bg-[#755252] w-full">
             <div>
@@ -51,24 +51,24 @@
                     <!-- For md screen size -->
 
                     <!-- For large screens -->
-                    <div class="dark:bg-[#755252] bg-gray-50 px-4 py-3">
+                    <div class="bg-[#755252] px-4 py-3">
                         <div class="container mx-auto flex items-center justify-between">
                             <h1 class="cursor-pointer mt-2">
                                 <img class="-my-10 h-36 w-56" src="logo.png" alt="logo">
                             </h1>
-                            <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">
+                            <ul class="hidden w-8/12 md:flex items-center justify-center space-x-8">                             
                                 <li>
-                                    <a href="javascript:void(0)" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Home</a>
+                                    <a href="{{ route("home") }}" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline {{ Route::is("home") ? "underline-offset-[15px] underline" : "hover:underline hover:underline-offset-[15px]" }}">Home</a>
                                 </li>
+                                {{-- <li>
+                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline {{ Route::is("home") }}">Category</a>
+                                </li> --}}
                                 <li>
-                                    <a href="javascript:void(0)" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Category</a>
+                                    <a href="{{ route("collections.user") }}" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 {{ Route::is("collections.*") ? "underline-offset-[15px] underline" : "hover:underline hover:underline-offset-[15px]" }}">Collection</a>
                                 </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Collection</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" class="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Support</a>
-                                </li>
+                                {{-- <li>
+                                    <a href="" class="text-white text-base focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline {{ Route::is("home") }}">Support</a>
+                                </li> --}}
                             </ul>
 
                             <div class="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
@@ -198,8 +198,8 @@
 
             <!-- Hero Page -->
             <section>
-                <div class="text-black py-40">
-                    <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-32">
+                <div class="text-black pt-16">
+                    <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-16">
                         <div class="flex flex-col w-full lg:w-1/3 justify-center items-start p-8">
                             <h1 class="text-3xl md:text-5xl p-2 text-[#8a5151] tracking-loose">Batik Essence</h1>
                             <h2 class="text-3xl md:text-5xl leading-relaxed md:leading-snug mb-2">Threads of Heritage, Woven in Time
@@ -226,10 +226,48 @@
                 </div>
             </section>
 
-            <!-- Service -->
-            <div class="w-full mx-auto bg-gray-100">
-            <div class="2xl:container mx-auto md:py-12 py-9 mb-32">
-                <h1 class="text-center text-4xl text-[#8a5151] font-medium mb-8">Service</h1>
+            <!-- Featured Products -->
+            <div class="w-full bg-white mb-20">
+                <h1 class="text-center text-4xl text-[#8a5151] font-medium mb-8">Our Product</h1>
+                <div class="flex items-center justify-center w-[77%] mx-auto h-full py-24 sm:py-8 px-4">
+                    <div class="w-full relative flex items-center justify-center">
+                        <button aria-label="slide backward" class="absolute bg-white h-10 w-10 rounded-full flex flex-col justify-center items-center z-30 left-0 ml-10 focus:outline-none focus:bg-[#8a5151] focus:ring-2 focus:ring-offset-2 focus:ring-[#8a5151] text-[#8a5151] focus:text-white" id="prev">
+                            <svg class="" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                        <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
+                            <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
+                               @forelse ($Carousel as $item)
+                               <div class="flex flex-shrink-0 relative h-[20rem] w-full sm:w-auto">
+                                <img src="{{$item['Img']}}" alt="black chair and white table" class="object-cover object-center w-80 h-full" />
+                                <div class="bg-black/[35%] absolute w-80 h-full p-6">
+                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">{{$item['Desc']}}</h3>
+                                    <div class="flex h-full items-end pb-6">
+                                        <h2 class="lg:text-md font-mono leading-4 text-base lg:leading-5 text-white">{{$item['Price']}}</h2>
+                                    </div>
+                                </div>
+                                </div>
+                               @empty
+
+                               @endforelse
+
+
+                            </div>
+                        </div>
+                        <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 bg-white h-10 w-10 rounded-full flex flex-col justify-center items-center focus:outline-none focus:bg-[#8a5151] focus:ring-2 focus:ring-offset-2 focus:ring-[#8a5151] text-[#8a5151] focus:text-white" id="next">
+                            <svg class="" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Service -->
+             <div class="w-full h-max mx-auto bg-gray-100">
+            <div class="2xl:container mx-auto md:py-2 py-9">
+                <h1 class="text-center text-4xl text-[#8a5151] font-medium mb-8 pt-3">Service</h1>
                 <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:gap-8 md:gap-12 gap-14 lg:px-20 lg:py-12 py-10 md:px-12 px-4 pl-12">
                     <!-- Delivery grid Card -->
                     <div class="">
@@ -268,45 +306,6 @@
                 </div>
                 </div>
             </div>
-
-            <!-- Featured Products -->
-            <div class="w-full bg-white mb-40">
-                <h1 class="text-center text-4xl text-[#8a5151] font-medium mb-8">Our Product</h1>
-                <div class="flex items-center justify-center w-[77%] mx-auto h-full py-24 sm:py-8 px-4">
-                    <div class="w-full relative flex items-center justify-center">
-                        <button aria-label="slide backward" class="absolute bg-white h-10 w-10 rounded-full flex flex-col justify-center items-center z-30 left-0 ml-10 focus:outline-none focus:bg-[#8a5151] focus:ring-2 focus:ring-offset-2 focus:ring-[#8a5151] text-[#8a5151] focus:text-white" id="prev">
-                            <svg class="" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
-                            <div id="slider" class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                               @forelse ($Carousel as $item)
-                               <div class="flex flex-shrink-0 relative h-[30rem] w-full sm:w-auto">
-                                <img src="{{$item['Img']}}" alt="black chair and white table" class="object-cover object-center w-80 h-full" />
-                                <div class="bg-black/[35%] absolute w-80 h-full p-6">
-                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">{{$item['Desc']}}</h3>
-                                    <div class="flex h-full items-end pb-6">
-                                        <h2 class="lg:text-md font-mono leading-4 text-base lg:leading-5 text-white">{{$item['Price']}}</h2>
-                                    </div>
-                                </div>
-                                </div>
-                               @empty
-
-                               @endforelse
-
-
-                            </div>
-                        </div>
-                        <button aria-label="slide forward" class="absolute z-30 right-0 mr-10 bg-white h-10 w-10 rounded-full flex flex-col justify-center items-center focus:outline-none focus:bg-[#8a5151] focus:ring-2 focus:ring-offset-2 focus:ring-[#8a5151] text-[#8a5151] focus:text-white" id="next">
-                            <svg class="" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
 
 
 
